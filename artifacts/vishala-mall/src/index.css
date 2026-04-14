@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --font-sans: 'Poppins', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
+  --color-background: #fdfaf6;
+  --color-foreground: #1a0a00;
+  --color-border: rgba(107, 15, 26, 0.15);
+  --color-primary: #6B0F1A;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #C9A030;
+  --color-muted: #f5ede3;
+  --color-muted-foreground: #7a5840;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+}
+
+:root {
+  --maroon: #6B0F1A;
+  --maroon-light: #8B1A27;
+  --maroon-dark: #4a0a12;
+  --gold: #C9A030;
+  --gold-light: #E4B84A;
+  --gold-dark: #a07820;
+  --cream: #fdfaf6;
+  --cream-dark: #f5ede3;
+  --text-dark: #1a0a00;
+  --text-mid: #4a2010;
+  --text-light: #7a5840;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-heading {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  margin: 0 auto 1rem;
+}
+
+.gold-text {
+  color: var(--gold);
+}
+
+.maroon-bg {
+  background-color: var(--maroon);
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Fade-in on scroll animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* WhatsApp float button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+}
+
+/* Category card hover */
+.cat-card {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.cat-card img {
+  transition: transform 0.6s ease;
+}
+
+.cat-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Product card hover */
+.product-card {
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 12px 32px rgba(107, 15, 26, 0.15);
+  transform: translateY(-2px);
+}
+
+/* CTA button */
+.btn-maroon {
+  background: var(--maroon);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-maroon:hover {
+  background: var(--maroon-light);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--maroon-dark);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+}
+
+.btn-outline-maroon {
+  background: transparent;
+  color: var(--maroon);
+  border: 1.5px solid var(--maroon);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+
+.btn-outline-maroon:hover {
+  background: var(--maroon);
+  color: white;
+}
+
+/* Nav underline effect */
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.2s;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}

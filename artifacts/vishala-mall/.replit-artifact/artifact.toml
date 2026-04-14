@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/vishala/"
+title = "Vishala Shopping Mall"
+version = "1.0.0"
+id = "artifacts/vishala-mall"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/vishala/" ]
+localPort = 26064
+
+[services.development]
+run = "pnpm --filter @workspace/vishala-mall run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/vishala-mall", "run", "build" ]
+publicDir = "artifacts/vishala-mall/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26064"
+BASE_PATH = "/vishala/"

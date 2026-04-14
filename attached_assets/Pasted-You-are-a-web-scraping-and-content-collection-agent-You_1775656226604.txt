@@ -1,0 +1,130 @@
+You are a web scraping and content collection agent. Your task is to gather ALL 
+publicly available data, images, videos, and business information for 
+"Vishala Shopping Mall Sircilla" to build a complete website for them.
+
+==============================
+TARGET SOURCES TO SCRAPE:
+==============================
+
+1. INSTAGRAM (Primary Content Source)
+   - URL: https://www.instagram.com/sircilla_vishalashoppingmall/
+   - URL: https://www.instagram.com/vishalashoppingmallsircilla/
+   - Collect: All post images, reels/videos, captions, hashtags, highlights,
+     bio text, follower count, story covers
+
+2. FACEBOOK PAGE
+   - URL: https://www.facebook.com/vishalashopping/
+   - Collect: Cover photos, profile photos, all post images, videos, 
+     reviews, ratings, about section, phone numbers, address, 
+     business hours, all text posts
+
+3. GOOGLE BUSINESS PROFILE
+   - URL: https://vishala-shopping-mall.business.site/
+   - Collect: Photos, reviews, ratings, address, phone, hours,
+     map embed, Q&A section
+
+4. JUSTDIAL LISTING
+   - URL: https://www.justdial.com/Sircilla/Vishala-Shopping-Mall-Sircilla-...
+   - Collect: All 6 photos, reviews, ratings, contact info, 
+     category tags, business description
+
+5. GOOGLE MAPS
+   - Search: "Vishala Shopping Mall Sircilla" on Google Maps
+   - Collect: All user-uploaded photos, reviews (text + ratings),
+     Q&A, business hours, location coordinates, street view
+
+6. YOUTUBE
+   - Search query: "Vishala Shopping Mall Sircilla"
+   - Collect: All video URLs, thumbnails, titles, descriptions,
+     view counts, upload dates
+
+7. WORLDORGS / REVIEW SITES
+   - URL: https://in.worldorgs.com/catalog/sircilla/clothing-store/vishala-shopping-mall-sircilla
+   - Collect: All customer reviews and ratings
+
+==============================
+DATA TO EXTRACT FROM EACH SOURCE:
+==============================
+
+BUSINESS INFORMATION:
+- Full name: Vishala Shopping Mall
+- Address: H.No: 6-1-129 to 6-1-134, Markandeya Nagar, 
+           Near Gandhi Chowk, Sircilla, Telangana - 505301
+- Phone: 096667 01070
+- WhatsApp: 9666701070
+- Category: Ethnic wear, Bridal wear, Sarees, Men's wear, 
+            Kid's wear, Suiting & Shirting
+- Founded: February 21, 2021
+- Type: Partnership Firm (MSME - Small Enterprise)
+- Tagline: "A Mall For All" / "Your ultimate destination for Ethnic & Bridal Wear"
+
+PRODUCT CATEGORIES TO IDENTIFY FROM IMAGES/POSTS:
+- Sarees (Pattu, Cotton, Arani, Bridal)
+- Wedding Collections
+- Men's Wear
+- Ethnic Wear
+- Kid's Wear
+- Suiting & Shirting
+- Party Wear
+- Daily Wear
+
+MEDIA TO DOWNLOAD:
+□ All product images (organized by category)
+□ Store interior/exterior photos
+□ Event/promotion photos
+□ All videos and reels
+□ Logo / brand images
+□ Festive collection images
+□ Bridal collection images
+□ Offer/sale banner images
+
+REVIEWS & TESTIMONIALS TO COLLECT:
+□ Customer name
+□ Star rating
+□ Review text
+□ Source platform (Google/Facebook/JD)
+□ Date of review
+
+==============================
+OUTPUT FORMAT REQUIRED:
+==============================
+
+Organize all collected data into these folders:
+
+/vishala-mall-website-data/
+├── /images/
+│   ├── /sarees/
+│   ├── /mens-wear/
+│   ├── /kids-wear/
+│   ├── /bridal/
+│   ├── /store-photos/
+│   └── /banners/
+├── /videos/
+│   ├── /reels/
+│   └── /youtube/
+├── /content/
+│   ├── business-info.json
+│   ├── reviews.json
+│   ├── product-categories.json
+│   └── social-links.json
+└── /assets/
+    └── logo/
+
+Also generate a JSON file with this structure:
+{
+  "name": "Vishala Shopping Mall",
+  "tagline": "...",
+  "address": "...",
+  "phone": "...",
+  "whatsapp": "...",
+  "social": {
+    "instagram": "...",
+    "facebook": "...",
+    "youtube": "..."
+  },
+  "categories": [...],
+  "reviews": [...],
+  "gallery": [...],
+  "videos": [...],
+  "hours": {...}
+}

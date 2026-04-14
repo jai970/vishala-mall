@@ -1,0 +1,303 @@
+===================================================
+SCRAPING AGENT INSTRUCTIONS — VISHALA SHOPPING MALL
+===================================================
+
+MISSION:
+Scrape ALL publicly available data for Vishala Shopping Mall Sircilla
+from across the entire open web. Do not limit yourself to a predefined
+list — discover and follow every source you find.
+
+SEED TARGETS (start here, then expand):
+  Instagram  : https://www.instagram.com/sircilla_vishalashoppingmall/
+               https://www.instagram.com/vishalashoppingmallsircilla/
+  Facebook   : https://www.facebook.com/vishalashopping/
+  Google Biz : https://vishala-shopping-mall.business.site/
+  JustDial   : search "Vishala Shopping Mall Sircilla"
+  YouTube    : search "Vishala Shopping Mall Sircilla"
+  Google Maps: search "Vishala Shopping Mall Sircilla Telangana"
+
+DISCOVERY RULES:
+  - Follow every external link found on seed pages
+  - Search Google for: "Vishala Shopping Mall Sircilla"
+  - Search YouTube for: "Vishala Shopping Mall Sircilla"
+  - Search for: site:instagram.com vishala shopping mall sircilla
+  - Search for: "vishala shopping mall" sircilla reviews
+  - Check WhatsApp Business catalog if accessible (9666701070)
+  - Check Trip.com, WorldOrgs, Sulekha, IndiaMart listings
+  - Follow all hashtags found on Instagram posts
+  - Include any news articles, local Sircilla blogs, event coverage
+
+===================================================
+MEDIA COLLECTION RULES
+===================================================
+
+IMAGES:
+  - Download ORIGINAL high-resolution versions only (no thumbnails)
+  - Format: JPG or PNG (whichever is the native/original format)
+  - Do NOT compress or resize
+  - Filename format: [source]_[category]_[YYYY-MM-DD]_[sequence].jpg
+    Example: instagram_saree_2024-11-03_001.jpg
+  - Collect: product photos, store interior, exterior, events,
+    offers/banners, bridal collections, festive collections, staff photos
+
+VIDEOS:
+  - Download original MP4 at highest available resolution
+  - Include: Instagram Reels, Facebook videos, YouTube videos
+  - Filename format: [source]_[YYYY-MM-DD]_[title-slug].mp4
+  - Also save: thumbnail image, title, description as sidecar .json
+
+===================================================
+DATA EXTRACTION SCHEMA
+===================================================
+
+Extract and populate the following JSON structure exactly.
+Output file name: vishala_mall_complete.json
+
+{
+  "business": {
+    "name": "Vishala Shopping Mall",
+    "tagline": "",
+    "established": "2021-02-21",
+    "type": "Partnership Firm",
+    "msme_category": "Small Enterprise",
+    "registration": "6-1-129 to 6-1-134",
+    "contact": {
+      "phone": "096667 01070",
+      "whatsapp": "9666701070",
+      "email": ""
+    },
+    "address": {
+      "line1": "H.No: 6-1-129 to 6-1-134",
+      "area": "Markandeya Nagar",
+      "landmark": "Near Gandhi Chowk",
+      "city": "Sircilla",
+      "district": "Rajanna Sircilla",
+      "state": "Telangana",
+      "pincode": "505301",
+      "country": "India",
+      "coordinates": {
+        "lat": "",
+        "lng": ""
+      }
+    },
+    "hours": {
+      "monday": "",
+      "tuesday": "",
+      "wednesday": "",
+      "thursday": "",
+      "friday": "",
+      "saturday": "",
+      "sunday": ""
+    }
+  },
+
+  "social": {
+    "instagram": [
+      {
+        "handle": "sircilla_vishalashoppingmall",
+        "url": "https://www.instagram.com/sircilla_vishalashoppingmall/",
+        "followers": 82000,
+        "posts_count": 1211,
+        "bio": "",
+        "highlights": []
+      },
+      {
+        "handle": "vishalashoppingmallsircilla",
+        "url": "https://www.instagram.com/vishalashoppingmallsircilla/",
+        "followers": 3466,
+        "posts_count": 619,
+        "bio": ""
+      }
+    ],
+    "facebook": {
+      "url": "https://www.facebook.com/vishalashopping/",
+      "page_name": "",
+      "likes": "",
+      "about": ""
+    },
+    "youtube": {
+      "channel_url": "",
+      "channel_name": "",
+      "subscribers": "",
+      "video_count": ""
+    },
+    "google_maps_url": "",
+    "google_rating": "",
+    "google_review_count": ""
+  },
+
+  "categories": [
+    {
+      "id": "sarees",
+      "name": "Sarees",
+      "subcategories": ["Pattu", "Cotton", "Arani", "Bridal", "Silk"],
+      "description": "",
+      "image_count": 0,
+      "featured_image": ""
+    },
+    {
+      "id": "bridal",
+      "name": "Bridal & Wedding Collections",
+      "subcategories": [],
+      "description": "",
+      "image_count": 0,
+      "featured_image": ""
+    },
+    {
+      "id": "mens-wear",
+      "name": "Men's Wear",
+      "subcategories": ["Formal", "Casual", "Ethnic", "Suiting & Shirting"],
+      "description": "",
+      "image_count": 0,
+      "featured_image": ""
+    },
+    {
+      "id": "ethnic-wear",
+      "name": "Ethnic Wear",
+      "subcategories": [],
+      "description": "",
+      "image_count": 0,
+      "featured_image": ""
+    },
+    {
+      "id": "kids-wear",
+      "name": "Kid's Wear",
+      "subcategories": [],
+      "description": "",
+      "image_count": 0,
+      "featured_image": ""
+    }
+  ],
+
+  "gallery": [
+    {
+      "id": "",
+      "filename": "",
+      "local_path": "media/images/[category]/[filename]",
+      "source": "instagram | facebook | google | justdial | youtube_thumbnail",
+      "source_url": "",
+      "category": "sarees | bridal | mens | kids | ethnic | store | banner | event",
+      "caption": "",
+      "date_posted": "",
+      "resolution": { "width": 0, "height": 0 },
+      "file_size_kb": 0
+    }
+  ],
+
+  "videos": [
+    {
+      "id": "",
+      "title": "",
+      "filename": "",
+      "local_path": "media/videos/[filename]",
+      "source": "instagram | facebook | youtube",
+      "source_url": "",
+      "thumbnail_path": "",
+      "duration_seconds": 0,
+      "resolution": "",
+      "views": 0,
+      "likes": 0,
+      "caption": "",
+      "date_posted": "",
+      "hashtags": []
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": "",
+      "author": "",
+      "rating": 0,
+      "text": "",
+      "source": "google | facebook | justdial | worldorgs | tripadvisor",
+      "source_url": "",
+      "date": "",
+      "language": "en | te"
+    }
+  ],
+
+  "posts": [
+    {
+      "id": "",
+      "platform": "instagram | facebook",
+      "post_url": "",
+      "caption": "",
+      "hashtags": [],
+      "date": "",
+      "likes": 0,
+      "comments": 0,
+      "media_files": []
+    }
+  ],
+
+  "meta": {
+    "scrape_date": "",
+    "scrape_agent": "",
+    "total_images": 0,
+    "total_videos": 0,
+    "total_reviews": 0,
+    "total_posts": 0,
+    "sources_scraped": []
+  }
+}
+
+===================================================
+FOLDER STRUCTURE OUTPUT
+===================================================
+
+vishala-mall-data/
+├── vishala_mall_complete.json      ← master JSON
+├── media/
+│   ├── images/
+│   │   ├── sarees/
+│   │   ├── bridal/
+│   │   ├── mens-wear/
+│   │   ├── kids-wear/
+│   │   ├── ethnic-wear/
+│   │   ├── store-exterior/
+│   │   ├── store-interior/
+│   │   ├── events/
+│   │   └── banners-offers/
+│   └── videos/
+│       ├── reels/
+│       ├── facebook/
+│       └── youtube/
+└── assets/
+    ├── logo/
+    ├── cover-photos/
+    └── thumbnails/
+
+===================================================
+TOOLS TO USE
+===================================================
+
+Instagram    → instaloader CLI
+               instaloader --highlights --tagged --stories
+               sircilla_vishalashoppingmall vishalashoppingmallsircilla
+
+YouTube      → yt-dlp
+               yt-dlp "ytsearch20:Vishala Shopping Mall Sircilla"
+               --write-thumbnail --write-description --write-info-json
+               -f bestvideo+bestaudio -o "%(upload_date)s_%(title)s.%(ext)s"
+
+Google Maps  → Outscraper or Apify "Google Maps Scraper"
+               Query: "Vishala Shopping Mall Sircilla"
+
+All sources  → Apify platform (no-code) for Facebook, JustDial,
+               WorldOrgs, Google Business
+
+General web  → Python: requests + BeautifulSoup + Playwright
+               for JavaScript-rendered pages
+
+===================================================
+QUALITY RULES
+===================================================
+
+✓ Images: minimum 800px on the shortest side
+✓ No watermarked thumbnails — original source only
+✓ Deduplicate: skip if MD5 hash already seen
+✓ Skip broken/404 URLs silently, log them in meta.sources_scraped
+✓ Collect Telugu-language captions and reviews as-is (do not translate)
+✓ Preserve all original hashtags
+✓ If a field value is unknown, use null (not empty string "")
+===================================================

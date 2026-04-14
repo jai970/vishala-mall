@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Lepakshi Showroom Clone"
+version = "1.0.0"
+id = "artifacts/lepakshi-clone"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24567
+
+[services.development]
+run = "pnpm --filter @workspace/lepakshi-clone run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/lepakshi-clone", "run", "build" ]
+publicDir = "artifacts/lepakshi-clone/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24567"
+BASE_PATH = "/"
